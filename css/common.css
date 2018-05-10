@@ -1,0 +1,220 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html,
+body {
+	width: 100%;
+	height: 100%;
+	font-size: 62.5%;
+	font-family: "微软雅黑";
+}
+
+ul,
+li {
+	list-style: none;
+}
+
+body h1 {
+	font-size: 8rem;
+	font-weight: 600;
+}
+
+nav {
+	width: 100%;
+	height: 70px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background: transparent;
+	font-size: 1.6rem;
+	color: #fff;
+	z-index: 10002;
+}
+
+nav.nav-dark:after {
+	opacity: 1;
+}
+
+nav:after {
+	content: '';
+	opacity: 0;
+	width: 100%;
+	height: 100%;
+	background: #000;
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 10001;
+}
+
+.logo {
+	width: auto;
+	height: 100%;
+	position: absolute;
+	left: 1rem;
+	z-index: 10002;
+}
+
+.logo span {
+	width: 36px;
+	height: 100%;
+	float: left;
+	background: url(../img/logo.png) no-repeat center center;
+	background-size: 100%;
+}
+
+.logo p {
+	float: left;
+	width: auto;
+	line-height: 70px;
+	text-indent: 12px;
+}
+
+.logo p:nth-of-type(2) {
+	display: none;
+}
+
+nav ul {
+	width: auto;
+	float: right;
+	height: 100%;
+	position: relative;
+	z-index: 10002;
+}
+
+nav ul li {
+	width: 13.6rem;
+	float: left;
+	font-size: 1.4rem;
+	text-align: center;
+	color: #fff;
+	cursor: pointer;
+	margin-top: 14px;
+	line-height: 3.6rem;
+	position: relative;
+}
+nav ul li a{
+	color: #fff;
+	text-decoration: none;
+}
+nav ul li a:hover{
+	color: #fff;
+	text-decoration: none;
+}
+nav ul li:after {
+	content: '';
+	width: 1.6rem;
+	height: 3px;
+	background: #fff;
+	position: absolute;
+	bottom: 0;
+	left: 6rem;
+}
+nav ul li.active:after {
+	background: #e74c4c;
+}
+
+nav ul li:hover:after {
+	background: #e74c4c;
+}
+
+p.title {
+	font-size: 2.4rem;
+	line-height: 100px;
+}
+
+.active-title,
+.nav-active:after {
+	animation: active 2.4s;
+	-moz-animation: active 2.4s;
+	-webkit-animation: active 2.4s;
+	-o-animation: active 2.4s;
+}
+
+.leave-title,
+.nav-leave:after {
+	animation: leave 1.2s;
+	-moz-animation: leave 1.2s;
+	-webkit-animation: leave 1.2s;
+	-o-animation: leave 1.2s;
+}
+#down{
+	width: 28px;
+	height: 20px;
+	position: fixed;
+	bottom: 8px;
+	left: 50%;
+	transform: translateX(-50%);
+	display: block;
+	background: url(../img/down.png) no-repeat;
+	background-size: 100% 100%;
+	z-index: 10000;
+	animation: arrow 1.5s linear infinite;
+	-moz-animation: arrow 1.5s linear infinite;
+	-webkit-animation: arrow 1.5s linear infinite;
+	-o-animation: arrow 1.5s linear infinite;
+}
+@keyframes active {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes leave {
+	from {
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
+	}
+}
+
+@keyframes arrow {
+	0% {
+		bottom: 8px;
+	}
+	50% {
+		bottom: 4px;
+	}
+	100% {
+		bottom: 8px;
+	}
+}
+
+@media only screen and (max-width:540px) {
+	body h1 {
+		font-size: 3.6rem;
+		font-weight: 600;
+	}
+	nav ul li {
+		width: 5rem;
+		font-size: 1rem;
+	}
+	nav ul li:after {
+		content: '';
+		width: 0.8rem;
+		height: 3px;
+		background: #fff;
+		position: absolute;
+		bottom: 0;
+		left: 2.1rem;
+	}
+	.logo span {
+		width: 24px;
+	}
+	p.title {
+		font-size: 1.6rem;
+		line-height: 64px;
+	}
+	.logo p:nth-of-type(1) {
+		display: none;
+	}
+	.logo p:nth-of-type(2) {
+		display: block;
+	}
+}
